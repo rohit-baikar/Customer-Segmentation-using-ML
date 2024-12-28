@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Segmentation</title>
+  <style>
+    *{
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+    }
+    body{
+      background: var(--brand-colors-primary-gradient, linear-gradient(90deg, #D22D1E -0.08%, #963AB1 52.26%, #20469B 99.82%));
+      height: 100px; /* Adjust height as needed */
+      width: 100%;   /* Full width */
+    }
+    center{
+      margin-left: 100px;
+    }
+    h1{
+      text-align: center;
+      background: var(--brand-colors-primary-gradient, linear-gradient(90deg, #D22D1E -0.08%, #963AB1 52.26%, #20469B 99.82%));
+      color: white;
+      text-shadow:(1px 1px 0 rgba(white, 1));
+      margin-top: 5px;
+      width: 100%;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    h2{
+      color: white;
+    }
+    h4{
+      font-size: 13px;
+            color:white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+    }
+    .form-container {
+      background: var(--brand-colors-primary-gradient, linear-gradient(90deg, #D22D1E -0.08%, #963AB1 52.26%, #20469B 99.82%));
+      font-family: 'Merriweather', sans-serif;
+      padding: 1em;
+      text-align: center;
+      margin: 20px auto;
+      border-radius: 8px;
+      margin-top: 20px;
+      padding: 20px;
+      width: 80%;
+    }
+    label {
+      display: block;
+      margin-bottom: 4px;
+      color: white;
+      font-weight: bold;
+    }
+    input[type="number"] {
+      width: 70%;
+      padding: 8px;
+      border:0;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    .radio-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1rem;
+  }
+  .button {
+    width: 80%;
+    padding: 12px;
+    color: white; 
+    background:#0033A0;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+  .button:hover {
+    box-shadow: 0 1px 1px 1px rgb(156, 155, 155);
+  }
+  input[type="radio"] {
+    transform: scale(1.5);
+    margin-right: 15px;
+    margin-left: 15px;
+    vertical-align: middle; 
+    cursor: pointer;
+
+  }
+  @media (max-width: 768px) {
+  center {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 0.875rem;
+  }
+
+  .form-container {
+    padding: 15px;
+    width: 90%;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+
+  .radio-group {
+    font-size: 0.875rem;
+  }
+  .mobile-only {
+    display: block;
+  }
+
+  .button {
+    font-size: 0.875rem;
+  }
+}
+
+/* Extra Small Devices (Phones, 480px and down) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 0.75rem;
+  }
+
+  .button {
+    font-size: 0.75rem;
+  }
+}
+  
+  </style>
+</head>
+<body>
+<center>
+  <div class="form-container">
+  <h1>Customer Segmentation</h1>
+  <h4>This is clustering app using KMeans. shows the customer Segmentation, Try filling the details bellow</h4>
+  <form action="" method="post">
+    <label>Enter Customer Age</label>
+    <input type="number" name="age" id="age" placeholder="Enter age of the customer" required minlength="1" maxlength="120"/>
+    <br><br>
+
+    <label>Enter Annual Income</label>
+    <input type="number" name="ai" id="ai" placeholder="Enter Annual Income" required />
+    <br><br>
+
+    <label>Enter Spending score of the customer (0-100)</label>
+    <input type="number" name="sc" id="sc" placeholder="Enter Total number of purchases made by the customer" required minlength="0" maxlength="100">
+    <br><br>
+
+    <label>Select Gender</label>
+    <div class="radio-group">
+      <input type="radio" name="sex" id="sex" value="0" checked="True" />Male
+      <input type="radio" name="sex" id="sex" value="1" />Female
+    </div>
+    <br>    
+
+    <input type="submit" class="button" value="Predict">   
+  </form>
+  <br>
+  <h2> {{ msg }} </h2>
+</center>
+</div>
+</body>
+</html>
